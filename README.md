@@ -6,7 +6,7 @@ You will need to pay careful attention to matching matrix dimensions - this isn'
 
 ### History
 
-2016 Vasilis Georgitzikis / Package code into easy-install Arduino library by 
+2016 Vasilis Georgitzikis / Package code into easy-install Arduino library. 
 
 2013 Charlie Matlack / Add in-place matrix inverse function, very helpful in limited memory environment of Arduino, and general clean-up.
 
