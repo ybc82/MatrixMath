@@ -1,9 +1,8 @@
 # MatrixMath
 A GitHub repo for the MatrixMath Arduino library - http://playground.arduino.cc/Code/MatrixMath
 
-This Arduino library for Matrix Mathematical operations
-
-Enjoy ;)
+This Arduino library for Matrix Mathematical operations gives you all the basics in a lean package, up to in-place matrix inversion.
+You will need to pay careful attention to matching matrix dimensions - this isn't Matlab!
 
 ### History
 
@@ -11,7 +10,7 @@ Enjoy ;)
 
 2013 Charlie Matlack / Add in-place matrix inverse function, very helpful in limited memory environment of Arduino, and general clean-up.
 
-Unknown original authors posted code to Arduino playground.
+Unknown original author, Arduino form user RobH45345, posted code to Arduino playground.
 
 ### License
 
