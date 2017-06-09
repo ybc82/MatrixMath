@@ -13,8 +13,8 @@
 MatrixMath Matrix;			// Pre-instantiate
 
 // Matrix Printing Routine
-// Uses tabs to separate numbers under assumption printed float width won't cause problems
-void MatrixMath::Print(float* A, int m, int n, String label)
+// Uses tabs to separate numbers under assumption printed double width won't cause problems
+void MatrixMath::Print(double* A, int m, int n, String label)
 {
 	// A = input matrix (m x n)
 	int i, j;
@@ -31,7 +31,7 @@ void MatrixMath::Print(float* A, int m, int n, String label)
 	}
 }
 
-void MatrixMath::Copy(float* A, int n, int m, float* B)
+void MatrixMath::Copy(double* A, int n, int m, double* B)
 {
 	int i, j, k;
 	for (i = 0; i < m; i++)
@@ -43,7 +43,7 @@ void MatrixMath::Copy(float* A, int n, int m, float* B)
 
 //Matrix Multiplication Routine
 // C = A*B
-void MatrixMath::Multiply(float* A, float* B, int m, int p, int n, float* C)
+void MatrixMath::Multiply(double* A, double* B, int m, int p, int n, double* C)
 {
 	// A = input matrix (m x p)
 	// B = input matrix (p x n)
@@ -63,7 +63,7 @@ void MatrixMath::Multiply(float* A, float* B, int m, int p, int n, float* C)
 
 
 //Matrix Addition Routine
-void MatrixMath::Add(float* A, float* B, int m, int n, float* C)
+void MatrixMath::Add(double* A, double* B, int m, int n, double* C)
 {
 	// A = input matrix (m x n)
 	// B = input matrix (m x n)
@@ -78,7 +78,7 @@ void MatrixMath::Add(float* A, float* B, int m, int n, float* C)
 
 
 //Matrix Subtraction Routine
-void MatrixMath::Subtract(float* A, float* B, int m, int n, float* C)
+void MatrixMath::Subtract(double* A, double* B, int m, int n, double* C)
 {
 	// A = input matrix (m x n)
 	// B = input matrix (m x n)
@@ -93,7 +93,7 @@ void MatrixMath::Subtract(float* A, float* B, int m, int n, float* C)
 
 
 //Matrix Transpose Routine
-void MatrixMath::Transpose(float* A, int m, int n, float* C)
+void MatrixMath::Transpose(double* A, int m, int n, double* C)
 {
 	// A = input matrix (m x n)
 	// m = number of rows in A
@@ -105,7 +105,7 @@ void MatrixMath::Transpose(float* A, int m, int n, float* C)
 			C[m * j + i] = A[n * i + j];
 }
 
-void MatrixMath::Scale(float* A, int m, int n, float k)
+void MatrixMath::Scale(double* A, int m, int n, double k)
 {
 	for (int i = 0; i < m; i++)
 		for (int j = 0; j < n; j++)
@@ -120,14 +120,14 @@ void MatrixMath::Scale(float* A, int m, int n, float k)
 //	 NUMERICAL RECIPES: The Art of Scientific Computing.
 // * The function returns 1 on success, 0 on failure.
 // * NOTE: The argument is ALSO the result matrix, meaning the input matrix is REPLACED
-int MatrixMath::Invert(float* A, int n)
+int MatrixMath::Invert(double* A, int n)
 {
 	// A = input matrix AND result matrix
 	// n = number of rows = number of columns in A (n x n)
 	int pivrow;		// keeps track of current pivot row
 	int k, i, j;		// k: overall index along diagonal; i: row index; j: col index
 	int pivrows[n]; // keeps track of rows swaps to undo at end
-	float tmp;		// used for finding max value and making column swaps
+	double tmp;		// used for finding max value and making column swaps
 
 	for (k = 0; k < n; k++)
 	{
